@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 const Navbar = () => {
@@ -16,36 +17,36 @@ const Navbar = () => {
           {/* Middle: Navigation Links (for larger screens) */}
           <div className="hidden sm:flex sm:flex-1 items-center justify-center">
             <div className="flex space-x-1">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Home
-              </a>
-              <a
-                href="/services"
+              </Link>
+              <Link
+                to="/services"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Services
-              </a>
-              <a
-                href="/portfolio"
+              </Link>
+              <Link
+                to="/portfolio"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Portfolio
-              </a>
-              <a
-                href="/blog"
+              </Link>
+              <Link
+                to="/blog"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Blogs
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -95,46 +96,46 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden bg-black`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Services
-          </a>
-          <a
-            href="/portfolio"
+          </Link>
+          <Link
+            to="/portfolio"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Portfolio
-          </a>
-          <a
-            href="/blog"
+          </Link>
+          <Link
+            to="/blog"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Blogs
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             About
-          </a>
+          </Link>
         </div>
 
         {/* Separate Get in Touch Button in Mobile View */}
         <div className="px-2 pt-4 pb-3">
-          <a
-            href="/contact"
-            className="text-white  hover:text-gray-100 block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-gray-700  border-white border-[2px]"
+          <Link
+            to="/contact"
+            className="text-white hover:text-gray-100 block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-gray-700 border-white border-[2px]"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
