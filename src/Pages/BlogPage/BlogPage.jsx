@@ -1,47 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import Background_pic from '../../assets/Homepage/SecondSection/Background_pic.png';
+import axios from 'axios';
 
 function BlogPage() {
-  const [blogs] = useState([
-    {
-      title: 'AI in Web Development',
-      desc: 'Discover how AI is revolutionizing web development and creating smarter, more interactive websites.',
-      date: 'September 25, 2024',
-      image: "blogImage1",
-    },
-    {
-      title: 'The Future of Mobile Apps',
-      desc: 'Explore trends in mobile app development that are shaping the future of user experience.',
-      date: 'August 10, 2024',
-      image: "blogImage2",
-    },
-    {
-      title: 'Business Automation Trends',
-      desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
-      date: 'July 15, 2024',
-      image: "blogImage3",
-    },
-    // Repeating blogs for demonstration
-    {
-      title: 'AI in Web Development',
-      desc: 'Discover how AI is revolutionizing web development and creating smarter, more interactive websites.',
-      date: 'September 25, 2024',
-      image: "blogImage1",
-    },
-    {
-      title: 'The Future of Mobile Apps',
-      desc: 'Explore trends in mobile app development that are shaping the future of user experience.',
-      date: 'August 10, 2024',
-      image: "blogImage2",
-    },
-    {
-      title: 'Business Automation Trends',
-      desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
-      date: 'July 15, 2024',
-      image: "blogImage3",
-    },
-  ]);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(()=>{
+    console.log("Fetching Data...")
+    axios.get("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=56d0093db3dd4c08984eab6eea571c27")
+    .then((response)=>{
+      if(response.data && response.data.articles)
+      {
+        setBlogs(response.data.articles.slice(0,20))
+      }
+      else
+      {
+        console.log("No articles found")
+      }
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  },[])
 
   return (
     <div className='w-full min-h-screen relative flex flex-col items-center'>
@@ -66,7 +47,7 @@ function BlogPage() {
                 className='relative w-full sm:w-[45%] md:w-[30%] bg-[#1A1A1A] p-[1.5rem] mx-[1rem] my-[1rem] rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#222]'
               >
                 <img
-                  src={blog.image}
+                  src={blog.urlToImage}
                   alt={blog.title}
                   className='w-full h-[12rem] object-cover rounded-lg mb-[1rem]'
                 />
@@ -74,9 +55,9 @@ function BlogPage() {
                   <span className='text-[1.5rem] font-semibold'>{blog.title}</span>
                   <span className='text-[0.9rem] font-light text-[#B8B8B8]'>{blog.date}</span>
                   <p className='text-[1rem] text-[#E0E0E0] leading-tight'>
-                    {blog.desc}
+                    {blog.description}
                   </p>
-                  <button className='flex items-center space-x-2 text-[#504CFF] hover:text-[#7A74FF]'>
+                  <button onClick={()=>{window.location.href = blog.url}} className='flex items-center space-x-2 text-[#504CFF] hover:text-[#7A74FF]'>
                     <span className='text-[1rem]'>Read more</span>
                     <BsArrowRightCircle size='1.2rem' />
                   </button>

@@ -3,6 +3,9 @@ import React from 'react';
 import Background_pic from '../assets/Homepage/SecondSection/Background_pic.png';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+
+
 
 const Footer = () => {
   return (
@@ -19,15 +22,18 @@ const Footer = () => {
                 <div className='flex flex-col w-full md:w-3/4 text-left'>
                 <h2 className='text-center md:text-left'>Let's work with us</h2>
                 <p className='text-[0.8rem] md:text-[0.9rem] font-light mt-[1rem] md:text-left text-center'>
-                    Mangcoding is a leading company in Indonesia, providing services in Website Development, Shopify, and WordPress.
+                Skilled in both front-end and back-end development, with a strong focus on innovation and collaboration.
                 </p>
                 </div>
 
                 {/* Button on the right side */}
-                <button className='flex w-fit space-x-[0.8rem] md:space-x-[1rem] bg-white px-[1.5rem] md:px-[2.2rem] py-[0.5rem] md:py-[0.6rem] rounded-full text-[0.9rem] md:text-[1rem] text-black mt-[1rem] md:mt-0 md:w-auto md:ml-[2rem]'>
-                <span>Know more</span>
-                <BsArrowUpRightCircle size='1rem' />
-                </button>
+                <Link to="/contact">
+                    <button className='flex w-fit space-x-[0.8rem] md:space-x-[1rem] bg-white px-[1.5rem] md:px-[2.2rem] py-[0.5rem] md:py-[0.6rem] rounded-full text-[0.9rem] md:text-[1rem] text-black mt-[1rem] md:mt-0 md:w-auto md:ml-[2rem]'>
+                    <span>Know more</span>
+                    <BsArrowUpRightCircle size='1rem' />
+                    </button>
+                </Link>
+               
             </div>
         </div>
 
@@ -38,32 +44,36 @@ const Footer = () => {
                 {/* First Div - Logo and Description */}
                 <div className="flex-1 md:w-[60%]">
                 <div className="flex flex-col items-center md:items-start">
-                    <img src="/logo.png" alt="Logo" className="mb-4" />
-                    <p className="text-sm text-gray-400">Your company description or tagline goes here. Keep it concise and professional.</p>
+                <div className="flex items-center">
+            <h1 className="text-white text-[1rem] font-medium">AN</h1>
+                </div>    
+                    <p className="text-sm text-gray-400">Lets collaborate to have a betterr future innovated with AI.</p>
                 </div>
-                </div>
-
-                {/* Second Div - Services */}
-                <div className="flex-1 md:w-[20%]">
-                <h3 className="font-bold mb-4">Services</h3>
-                <ul className="space-y-2">
-                    <li><a href="#" className="text-gray-400 hover:text-white">Web Development</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">Mobile Apps</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">UI/UX Design</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">SEO Optimization</a></li>
-                </ul>
                 </div>
 
                 {/* Third Div - Resources */}
+
                 <div className="flex-1 md:w-[20%]">
                 <h3 className="font-bold mb-4">Resources</h3>
                 <ul className="space-y-2">
-                    <li><a href="#" className="text-gray-400 hover:text-white">Blog</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">Help Center</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" className="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    <li>
+                    <Link to="/blog" className="text-gray-400 hover:text-white">
+                        Blog
+                    </Link>
+                    </li>
+                    <li>
+                    <Link to="/about" className="text-gray-400 hover:text-white">
+                        About
+                    </Link>
+                    </li>
+                    <li>
+                    <Link to="/contact" className="text-gray-400 hover:text-white">
+                        Contact Us
+                    </Link>
+                    </li>
                 </ul>
                 </div>
+
             </div>
 
             {/* Bottom Section */}
@@ -72,19 +82,13 @@ const Footer = () => {
                 <div className="flex space-x-4">
                 <button className="text-gray-400 hover:text-white">Terms and Policy</button>
                 </div>
-                <div class='w-fir flex items-center justify-center space-x-[1.1rem]'>
-                    <button>
-                        <FaInstagram color='white' size='1.1rem'/>
-                    </button>
-                    <button>
-                        <FaFacebook color='white' size='1.1rem'/>
-                    </button>
-                    <button>
-                        <FaLinkedin color='white' size='1.1rem'/>
-                    </button>
-                    <button>
-                        <FaTwitter color='white' size='1.1rem'/>
-                    </button>
+                <div class='w-fit flex items-center justify-center space-x-[1.1rem]'>
+                <button onClick={() => window.open("https://www.instagram.com/abdullxh_naeem/", "_blank")}>
+                    <FaInstagram color="white" size="1.3rem" />
+                </button>
+                <button onClick={() => window.open("https://www.linkedin.com/in/abdullah-naeem-802518201/", "_blank")}>
+                    <FaLinkedin color="white" size="1.3rem" />
+                </button>
                 </div>
             </div>
         </div>

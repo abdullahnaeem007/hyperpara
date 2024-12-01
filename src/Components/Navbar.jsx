@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between h-16">
           {/* Company Name on Left */}
           <div className="flex items-center">
-            <h1 className="text-white text-[1rem] font-medium">HyperPara</h1>
+            <h1 className="text-white text-[1rem] font-medium">AN</h1>
           </div>
 
           {/* Middle: Navigation Links (for larger screens) */}

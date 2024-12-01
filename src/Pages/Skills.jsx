@@ -14,6 +14,8 @@ import app_skill from '../assets/Homepage/SecondSection/app_skill.png';
 import software_skill from '../assets/Homepage/SecondSection/software_skill.png';
 import ai_solution_skill from '../assets/Homepage/SecondSection/ai_solution_skill.png';
 import business_skill from '../assets/Homepage/SecondSection/business_skill.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 
 function Skills() {
   const [skills] = useState([
@@ -68,7 +70,7 @@ function Skills() {
   ]);
 
   return (
-      <div className='w-full min-h-screen relative flex flex-col space-y-[3rem] items-center text-[3.2rem] font-light text-[#dad4e4] leading-tight'>
+      <div id='nextSection' className='w-full min-h-screen relative flex flex-col space-y-[3rem] items-center text-[3.2rem] font-light text-[#dad4e4] leading-tight'>
         <img 
           src={Background_pic} 
           className='w-full h-full object-cover absolute z-[-999] bg-black' 
@@ -87,9 +89,11 @@ function Skills() {
 
           {/* Right Section: Button */}
           <div className='flex justify-center md:justify-end md:w-1/4 w-full mt-[2rem] md:mt-0'>
-            <button className='flex space-x-[1rem] bg-white px-[2.2rem] rounded-full text-[1rem] text-black py-[0.6rem]'>
-              <span>Know more</span><BsArrowUpRightCircle size='1rem' />
-            </button>
+            <Link to="/about">
+              <button className='flex space-x-[1rem] bg-white px-[2.2rem] rounded-full text-[1rem] text-black py-[0.6rem]'>
+                <span>Know more</span><BsArrowUpRightCircle size='1rem' />
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -112,10 +116,12 @@ function Skills() {
               </div>
 
               {/* Button */}
-              <button className='w-fit h-fit text-[1rem] flex items-center space-x-[0.5rem] px-[2.2rem] py-[0.7rem] bg-white text-black rounded-full mt-[1rem] md:mt-0'>
-                <span>Get started</span>
-                <BsArrowUpRightCircle size='1rem' />
-              </button>
+              <Link to="/services">
+                <button className='w-fit h-fit text-[1rem] flex items-center space-x-[0.5rem] px-[2.2rem] py-[0.7rem] bg-white text-black rounded-full mt-[1rem] md:mt-0'>
+                  <span>Get started</span>
+                  <BsArrowUpRightCircle size='1rem' />
+                </button>
+              </Link>
             </div>
           </div>
 

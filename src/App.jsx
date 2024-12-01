@@ -14,24 +14,21 @@ import Herosection from './Components/Herosection'
 function App() {
   return (
     <div className='max-w-screen min-h-screen font-Poppins text-white'>
-      <Navbar/>
-      <Herosection/> 
       <BrowserRouter>
-        <Fragment>
-          <Routes>
-            <Route Component={Homepage} path='/'/>
-            <Route Component={ServicesPage} path='/services'/>
-            <Route Component={PortfolioPage} path='/portfolio'/>
-            <Route Component={AboutPage} path='/about'/>
-            <Route Component={BlogPage} path='/blog'/>
-            <Route Component={ContactPage} path='/contact'/>
-          </Routes>
-        </Fragment>
+        <Navbar />
+        <Herosection />
+        <Routes>
+          <Route element={<Homepage />} path='/' />
+          <Route element={<ServicesPage />} path='/services' />
+          <Route element={<PortfolioPage />} path='/portfolio' />
+          <Route element={<AboutPage />} path='/about' />
+          <Route element={<BlogPage />} path='/blog' />
+          <Route element={<ContactPage />} path='/contact' />
+        </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer/>
     </div>
   )
 }
-
 
 export default App

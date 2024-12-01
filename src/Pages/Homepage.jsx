@@ -2,7 +2,6 @@ import React from 'react'
 import Skills from '../Pages/Skills'
 import Banner from './../Components/Banner'
 import Projects from '../Pages/Projects'
-import Testimonials from '../Pages/Testimonials'
 
 function Homepage() {
   return (
@@ -10,7 +9,6 @@ function Homepage() {
       <Skills/>
       <Banner/>
       <Projects/>
-      <Testimonials/>
     </div>
   )
 }
