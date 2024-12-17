@@ -10,22 +10,26 @@ import ContactPage from './Pages/ContactPage/ContactPage'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Herosection from './Components/Herosection'
+import Chatbot from './Features/Chatbot'
 
 function App() {
   return (
     <div className='max-w-screen min-h-screen font-Poppins text-white'>
       <BrowserRouter>
-        <Navbar />
-        <Herosection />
-        <Routes>
-          <Route element={<Homepage />} path='/' />
-          <Route element={<ServicesPage />} path='/services' />
-          <Route element={<PortfolioPage />} path='/portfolio' />
-          <Route element={<AboutPage />} path='/about' />
-          <Route element={<BlogPage />} path='/blog' />
-          <Route element={<ContactPage />} path='/contact' />
-        </Routes>
-        <Footer />
+        <Fragment>
+          <Navbar />
+          <Herosection />
+          <Chatbot/>  
+          <Routes>
+            <Route element={<Homepage />} path='/' />
+            <Route element={<ServicesPage />} path='/services' />
+            <Route element={<PortfolioPage />} path='/portfolio' />
+            <Route element={<AboutPage />} path='/about' />
+            <Route element={<BlogPage />} path='/blog' />
+            <Route element={<ContactPage />} path='/contact' />
+          </Routes>
+          <Footer />
+        </Fragment>
       </BrowserRouter>
     </div>
   )
