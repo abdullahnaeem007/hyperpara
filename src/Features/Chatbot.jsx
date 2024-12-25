@@ -6,6 +6,27 @@ import { FaSpinner } from "react-icons/fa";
 
 const trainingData = "Abdullah Naeem is a highly skilled Full Stack Developer and Software Engineer with a proven track record in building innovative, scalable, and consumer-focused products. Currently an Associate Software Engineer at Dubizzle Labs, he specializes in developing and maintaining backend systems for the Jarvis product using Ruby on Rails, focusing on API development, data management, performance optimization, and scalability. As a freelancer on Fiverr and Upwork since 2022, Abdullah has successfully automated businesses by integrating AI technologies and Lang-chain architectures, creating seamless web applications with Next.js/React for frontends, Node.js for backends, and PostgreSQL for databases. He earned his Bachelor’s degree in Computer Science from the National University of Computer and Emerging Sciences (2020-2024, GPA: 3.23) and further honed his expertise through apprenticeships at Devsinc (Ruby on Rails) and Grandeur (IoT). His skills include frontend development with ReactJS, NextJS, and Figma; backend technologies such as Ruby on Rails, NodeJS, ExpressJS, and FastAPI; AI integration using Python, OpenAI, and custom-trained models; application deployment with Heroku, Cloudflare, Railway, and Render; and version control using GitHub. Abdullah has delivered a range of impactful projects, including DivergeHR, an AI-driven IT talent acquisition platform that streamlines hiring with chatbot interviews and candidate evaluations; ThreeJS Portfolio, an immersive 3D showcase of his work; Resume Analysis AI, a SaaS for optimizing resumes using Node.js, React.js, ChatGPT, and Stripe integration; Truthlook, an unbiased search engine providing fair access to web content using advanced algorithms; FuturAI, an innovative platform empowering users to explore AI capabilities like generating visuals and answering queries; and PostBud AI, a digital assistant for crafting engaging social media content and marketing copy. Abdullah’s technical expertise extends to integrating AI tools and creating applications that blend creativity with technical innovation. He is open to collaborations and discussions to elevate digital experiences and innovate solutions. You can connect with Abdullah at Abdullahnaeem0914@gmail.com, via phone at +923314744409"
 
+const formatResponse = (content) => {
+  if (!content) return "";
+
+  // Example: Adding headings and bullet points dynamically
+  const lines = content.split("\n");
+  return (
+    <div>
+      {lines.map((line, index) => {
+        if (line.startsWith("1.") || line.startsWith("-")) {
+          return <li key={index}>{line.replace(/^\d+\.\s*/, "").replace(/^-/, "")}</li>;
+        } else if (line.startsWith("**")) {
+          return <h3 key={index}>{line.replace(/\*\*/g, "")}</h3>;
+        } else {
+          return <p key={index}>{line}</p>;
+        }
+      })}
+    </div>
+  );
+};
+
+
 function Chatbot() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const hasChatOpenedOnce = useRef(false)
@@ -108,12 +129,10 @@ function Chatbot() {
                 >
                   <div
                     className={`${
-                      msg.role === "user"
-                        ? "bg-[#f1f1f1] text-black"
-                        : "bg-[#9b59f6] text-white"
+                      msg.role === "user" ? "bg-[#f1f1f1] text-black" : "bg-[#9b59f6] text-white"
                     } max-w-[70%] rounded-lg p-3`}
                   >
-                    {msg.content}
+                    {msg.role === "assistant" ? formatResponse(msg.content) : msg.content}
                   </div>
                 </div>
               )
