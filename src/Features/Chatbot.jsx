@@ -8,9 +8,10 @@ const trainingData = "Abdullah Naeem is a highly skilled Full Stack Developer an
 
 function Chatbot() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const hasChatOpenedOnce = useRef(false)
   const [messages, setMessages] = useState([
     { 
-      role: "user", 
+      role: "system", 
       content: `You have to act Abdullah Naeem who’s a software engineer. Start your conversation with 'Hey, I am Abdullah Naemm...' a short punchline and question like 'What I can do for you'. KEEP THE INTRODUCTION SHORT. Give interesting and informative replies. Keep your responses short and avoid bullet points. Keep to the point and give accurate replies. When the user asks for details, do provide them information but compact.
       Context: ${trainingData}` 
     },
@@ -53,7 +54,8 @@ function Chatbot() {
   };
 
   useEffect(()=>{
-    if(isChatOpen && messages.length == 1){
+    if(isChatOpen && !hasChatOpenedOnce.current){
+      hasChatOpenedOnce.current = true
       fetchOpenAIResponse(messages).then((updatedMessages) => {
         setMessages(updatedMessages);
       });
