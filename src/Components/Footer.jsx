@@ -13,7 +13,7 @@ const Footer = () => {
           className='w-full h-full object-cover absolute z-[-10] bg-brand-bg' 
           alt="Background" 
         />
-        <div class='w-full flex flex-col space-y-[4rem] items-center pt-[5rem] pb-[2rem] '>
+        <div className='w-full flex flex-col space-y-[4rem] items-center pt-[5rem] pb-[2rem] '>
         <div className='w-full flex flex-col px-[1.5rem] md:px-[5rem] pb-[3rem] md:pb-[4rem] text-[2rem] md:text-[3.2rem] border-b border-gray-400/50'>
             <div className='w-full flex flex-col md:flex-row items-center justify-between'>
                 {/* Container for the title and description */}
@@ -104,7 +104,7 @@ const Footer = () => {
                 <div className="flex space-x-4">
                 <Link to="/about" className="text-gray-400 hover:text-brand-accent transition-colors duration-300">Terms and Policy</Link>
                 </div>
-                <div class='w-fir flex items-center justify-center space-x-[1.1rem]'>
+                <div className='w-full flex items-center justify-center space-x-[1.1rem]'>
                     <Link 
                       to="https://www.instagram.com/hyperpara" 
                       target="_blank" 

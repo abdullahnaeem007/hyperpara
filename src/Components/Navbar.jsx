@@ -84,7 +84,7 @@ const Navbar = () => {
               className="text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] py-[0.6rem] bg-transparent border-brand-accent border-[1px] text-white rounded-full hover:bg-brand-accent hover:text-brand-bg transition-colors duration-300"
             >
               <span>Contact Us</span>
-              <BsArrowUpRightCircle size="1rem" className="text-brand-accent" />
+              <BsArrowUpRightCircle size="1rem" />
             </Link>
           </div>
 

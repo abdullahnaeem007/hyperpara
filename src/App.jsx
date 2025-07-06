@@ -171,7 +171,7 @@ const AppLayout = () => {
 function App() {
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
   }, []);
 
   return (

@@ -153,18 +153,18 @@ If you need to configure your GoDaddy email manually:
 Create a `.env` file in your project root:
 
 ```env
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
 Then update your code:
 ```javascript
 emailjs.send(
-    process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     templateParams,
-    process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 )
 ```
 
