@@ -7,6 +7,7 @@ import PortfolioPage from './Pages/PortfolioPage/PortfolioPage'
 import AboutPage from './Pages/AboutPage/AboutPage'
 import BlogPage from './Pages/BlogPage/BlogPage'
 import ContactPage from './Pages/ContactPage/ContactPage'
+import ProjectDetail from './Pages/ProjectDetails/ProjectDetail'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Herosection from './Components/Herosection'
@@ -31,24 +32,28 @@ const PageHeader = ({ title, description }) => {
 const AppLayout = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isProjectPage = location.pathname.startsWith('/project/');
 
   return (
     <div className='max-w-screen min-h-screen font-Poppins text-white'>
       <Navbar/>
       {isHomePage ? (
         <Herosection/>
+      ) : isProjectPage ? (
+        // Don't show PageHeader for project detail pages
+        null
       ) : (
         <PageHeader 
           title={
             location.pathname === '/services' ? 'Our Services' :
-            location.pathname === '/portfolio' ? 'Our Portfolio' :
+            location.pathname === '/products' ? 'Our Products' :
             location.pathname === '/about' ? 'About Us' :
             location.pathname === '/blog' ? 'Our Blog' :
             location.pathname === '/contact' ? 'Contact Us' : 'Page'
           }
           description={
             location.pathname === '/services' ? 'Discover our comprehensive range of lightning-fast software development services, powerful SaaS products, and intelligent AI-driven solutions designed to accelerate your digital growth.' :
-            location.pathname === '/portfolio' ? 'Explore our portfolio of successful projects showcasing our expertise in AI solutions, web development, and platform engineering across diverse industries.' :
+            location.pathname === '/products' ? 'Explore our products showcasing our expertise in AI solutions, web development, and platform engineering across diverse industries.' :
             location.pathname === '/about' ? 'Learn about Hyperpara, a hybrid software company built for the next generation of digital growth, delivering cutting-edge solutions at hyperspeed.' :
             location.pathname === '/blog' ? 'Stay updated with the latest insights, trends, and innovations in AI, software development, and digital transformation.' :
             location.pathname === '/contact' ? 'Get in touch with our team of experts to discuss your project requirements and discover how we can accelerate your digital transformation.' : 'Page description'
@@ -58,10 +63,11 @@ const AppLayout = () => {
       <Routes>
         <Route Component={Homepage} path='/'/>
         <Route Component={ServicesPage} path='/services'/>
-        <Route Component={PortfolioPage} path='/portfolio'/>
+        <Route Component={PortfolioPage} path='/products'/>
         <Route Component={AboutPage} path='/about'/>
         <Route Component={BlogPage} path='/blog'/>
         <Route Component={ContactPage} path='/contact'/>
+        <Route Component={ProjectDetail} path='/project/:projectId'/>
       </Routes>
       <Footer/>
     </div>

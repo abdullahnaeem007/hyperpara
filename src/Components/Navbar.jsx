@@ -45,14 +45,14 @@ const Navbar = () => {
                 Services
               </Link>
               <Link
-                to="/portfolio"
+                to="/products"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === '/portfolio' 
+                  location.pathname === '/products' 
                     ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                 }`}
               >
-                Portfolio
+                Products
               </Link>
               <Link
                 to="/blog"
@@ -142,14 +142,14 @@ const Navbar = () => {
             Services
           </Link>
           <Link
-            to="/portfolio"
+            to="/products"
             className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-              location.pathname === '/portfolio' 
+              location.pathname === '/products' 
                 ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                 : 'text-gray-300 hover:bg-gray-700 hover:text-white'
             }`}
           >
-            Portfolio
+            Products
           </Link>
           <Link
             to="/blog"

@@ -132,22 +132,6 @@ function Testimonials() {
       </div>
 
       <div className='w-full flex flex-col px-[1.5rem] md:px-[5rem] space-y-[3rem] z-10'>
-        {/* Stats Section */}
-        <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
-          <div className='text-center p-6 bg-card-bg rounded-xl border border-brand-accent/20 hover:scale-105 transition-transform duration-300'>
-            <div className='text-3xl font-bold text-brand-accent mb-2'>500+</div>
-            <div className='text-sm text-gray-400'>Projects Delivered</div>
-          </div>
-          <div className='text-center p-6 bg-card-bg rounded-xl border border-brand-accent/20 hover:scale-105 transition-transform duration-300'>
-            <div className='text-3xl font-bold text-brand-accent mb-2'>95%</div>
-            <div className='text-sm text-gray-400'>Client Satisfaction</div>
-          </div>
-          <div className='text-center p-6 bg-card-bg rounded-xl border border-brand-accent/20 hover:scale-105 transition-transform duration-300'>
-            <div className='text-3xl font-bold text-brand-accent mb-2'>24h</div>
-            <div className='text-sm text-gray-400'>Average Response Time</div>
-          </div>
-        </div>
-
         {/* Header Section */}
         <div className='w-full flex flex-col items-center text-center space-y-6'>
           <h2 className='text-[2rem] md:text-[2.5rem] font-light text-green-400'>What Our Clients Say</h2>

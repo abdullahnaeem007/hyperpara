@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import { BsArrowUpRightCircle, BsGithub, BsGlobe } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { FaReact, FaNodeJs, FaDatabase, FaStripe } from 'react-icons/fa';
 import { SiOpenai, SiRubyonrails, SiSupabase, SiVercel, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
-import proj1 from '../../assets/Homepage/ProjectSection/proj1.png';
+import proj1 from '../assets/Homepage/ProjectSection/proj1.png'
 
-function PortfolioPage() {
+function ProjectShowcase() {
 
   const projects = [
     {
@@ -17,8 +17,6 @@ function PortfolioPage() {
       demo: 'https://fuatra-fe.vercel.app/',
       github: 'https://github.com/abdullahnaeem007/Fuatra_POS_System',
       category: 'E-commerce & POS',
-      role: 'Technical Lead',
-      timeline: 'April 2025 - June 2025',
       techStack: [
         { name: 'React + Vite', icon: FaReact },
         { name: 'Ruby on Rails', icon: SiRubyonrails },
@@ -35,8 +33,6 @@ function PortfolioPage() {
       demo: 'https://resumeanalysis-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/ResumeAnalysis-frontend',
       category: 'AI & SaaS',
-      role: 'Full-Stack Developer',
-      timeline: 'January 2024 - April 2024',
       techStack: [
         { name: 'React.js', icon: FaReact },
         { name: 'Node.js', icon: FaNodeJs },
@@ -53,8 +49,6 @@ function PortfolioPage() {
       demo: 'https://divergehr-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/divergehr-frontend',
       category: 'HR & Recruitment',
-      role: 'Full-Stack Developer',
-      timeline: 'June 2023 - August 2023',
       techStack: [
         { name: 'Next.js', icon: SiNextdotjs },
         { name: 'Node.js', icon: FaNodeJs },
@@ -65,23 +59,37 @@ function PortfolioPage() {
   ];
 
   return (
-    <div className='w-full min-h-screen bg-[#373643] text-white'>
-      <div className='w-full flex flex-col md:px-[5rem] px-[1rem] py-[3rem] space-y-[3rem]'>
-        {/* Header */}
-        <div className='w-full flex flex-col'>
-          <h2 className='w-full text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center md:text-left items-center font-light'>
-            Products
-          </h2>
-          <div className='w-full flex flex-col md:flex-row items-center justify-between'>
-            <p className='text-[0.9rem] md:text-[1rem] md:text-left text-center font-light mt-[1rem] md:mt-0 text-gray-300'>
-              Detailed showcase of our expertise in full-stack development, AI integration, and scalable solutions
-            </p>
+    <div className='w-full min-h-screen relative flex flex-col space-y-[3rem] items-center text-[3.2rem] font-light text-[#dad4e4] leading-tight bg-[#373643]'>
+      <div className='w-full flex flex-col md:px-[5rem] px-[1rem] space-y-[3rem] py-[3rem]'>
+        {/* Stats Section */}
+        <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
+          <div className='text-center p-6 bg-[#2a2935] rounded-xl border border-[#18CB96]/20 hover:scale-105 transition-transform duration-300'>
+            <div className='text-3xl font-bold text-[#18CB96] mb-2'>500+</div>
+            <div className='text-sm text-gray-400'>Projects Delivered</div>
+          </div>
+          <div className='text-center p-6 bg-[#2a2935] rounded-xl border border-[#18CB96]/20 hover:scale-105 transition-transform duration-300'>
+            <div className='text-3xl font-bold text-[#18CB96] mb-2'>95%</div>
+            <div className='text-sm text-gray-400'>Client Satisfaction</div>
+          </div>
+          <div className='text-center p-6 bg-[#2a2935] rounded-xl border border-[#18CB96]/20 hover:scale-105 transition-transform duration-300'>
+            <div className='text-3xl font-bold text-[#18CB96] mb-2'>24h</div>
+            <div className='text-sm text-gray-400'>Average Response Time</div>
           </div>
         </div>
 
+        <div className='w-full flex flex-col'>
+          <h2 className='w-full text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center md:text-left items-center text-white'>Our Projects</h2>
+          <div className='w-full flex flex-col md:flex-row items-center justify-between'>
+            <p className='text-[0.8rem] md:text-[0.9rem] md:text-left text-center font-light mt-[1rem] md:mt-0 text-gray-300'>
+              Showcasing our expertise in full-stack development, AI integration, and scalable solutions
+            </p>
+            <Link to="/products" className='text-[0.8rem] md:text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] py-[0.7rem] md:px-[1.2rem] bg-[#18CB96] text-black rounded-full mt-[1rem] md:mt-0 hover:bg-[#15b085] transition-colors'>
+              <span>View All Products</span>
+              <BsArrowUpRightCircle size='1rem'/>
+            </Link>
+          </div>
+        </div>
 
-
-        {/* Projects Grid */}
         <div className='w-full h-fit flex flex-wrap justify-center gap-[2rem]'>
           {projects.map((project, index) => (
             <div 
@@ -109,16 +117,6 @@ function PortfolioPage() {
 
                 {/* Subtitle */}
                 <p className='text-[#18CB96] text-[0.8rem] font-medium'>{project.subtitle}</p>
-
-                {/* Role and Timeline */}
-                <div className='flex flex-wrap gap-[0.5rem] text-[0.7rem]'>
-                  <span className='bg-[#373643] text-white px-[0.6rem] py-[0.2rem] rounded-full border border-gray-600'>
-                    {project.role}
-                  </span>
-                  <span className='bg-[#373643] text-white px-[0.6rem] py-[0.2rem] rounded-full border border-gray-600'>
-                    {project.timeline}
-                  </span>
-                </div>
 
                 {/* Description */}
                 <p className='text-[0.75rem] text-gray-300 leading-relaxed line-clamp-3'>
@@ -176,7 +174,7 @@ function PortfolioPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PortfolioPage;
+export default ProjectShowcase; 
