@@ -4,14 +4,24 @@ import Background_pic from '../../assets/Homepage/SecondSection/Background_pic.p
 function AboutPage() {
   const teamMembers = [
     {
-      name: 'John Doe',
-      title: 'Co-Founder & CEO',
-      image: "cofounder1",
+      name: 'Abdullah Naeem',
+      title: 'Co-Founder Hyperpara',
+      image: 'src/assets/AboutUs/AbdullahNaeemProfile.jpeg',
     },
     {
-      name: 'Jane Smith',
-      title: 'Co-Founder & CTO',
-      image: "cofounder2",
+      name: 'Ali Raza',
+      title: 'Co-Founder - Hyperpara',
+      image: 'src/assets/AboutUs/AliRazaProfile.jpeg',
+    },
+    {
+      name: 'Abdullah Yaqub',
+      title: 'Co-Founder Hyperpara',
+      image: 'src/assets/AboutUs/AbdullahYaqub_ProfilePicture.jpg',
+    },
+    {
+      name: 'Aleena Zafar',
+      title: 'Business Developer',
+      image: 'src/assets/AboutUs/Aleena_Profile.jpeg',
     },
   ];
 

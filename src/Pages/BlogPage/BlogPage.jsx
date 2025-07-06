@@ -5,42 +5,44 @@ import Background_pic from '../../assets/Homepage/SecondSection/Background_pic.p
 function BlogPage() {
   const [blogs] = useState([
     {
-      title: 'AI in Web Development',
-      desc: 'Discover how AI is revolutionizing web development and creating smarter, more interactive websites.',
-      date: 'September 25, 2024',
-      image: "blogImage1",
+      title: 'Model Context Protocol (MCP)',
+      desc: 'The future of AI isn’t just bigger models. Systems that remember you, respond like you’d expect.',
+      date: 'July 4, 2025',
+      image: "src/assets/Blogs/Blog1.jpeg",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7347039038387716096/",
     },
     {
-      title: 'The Future of Mobile Apps',
-      desc: 'Explore trends in mobile app development that are shaping the future of user experience.',
-      date: 'August 10, 2024',
-      image: "blogImage2",
+      title: 'Rise of AI with a Mind of Its Own',
+      desc: 'The next evolution of artificial intelligence is no longer just reactive — it’s agentic and amazing.',
+      date: 'July 1, 2025',
+      image: "src/assets/Blogs/Blog2.jpeg",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7346671354407981056/",
     },
-    {
-      title: 'Business Automation Trends',
-      desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
-      date: 'July 15, 2024',
-      image: "blogImage3",
-    },
-    // Repeating blogs for demonstration
-    {
-      title: 'AI in Web Development',
-      desc: 'Discover how AI is revolutionizing web development and creating smarter, more interactive websites.',
-      date: 'September 25, 2024',
-      image: "blogImage1",
-    },
-    {
-      title: 'The Future of Mobile Apps',
-      desc: 'Explore trends in mobile app development that are shaping the future of user experience.',
-      date: 'August 10, 2024',
-      image: "blogImage2",
-    },
-    {
-      title: 'Business Automation Trends',
-      desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
-      date: 'July 15, 2024',
-      image: "blogImage3",
-    },
+    // {
+    //   title: 'Business Automation Trends',
+    //   desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
+    //   date: 'July 15, 2024',
+    //   image: "blogImage3",
+    // },
+    // // Repeating blogs for demonstration
+    // {
+    //   title: 'AI in Web Development',
+    //   desc: 'Discover how AI is revolutionizing web development and creating smarter, more interactive websites.',
+    //   date: 'September 25, 2024',
+    //   image: "blogImage1",
+    // },
+    // {
+    //   title: 'The Future of Mobile Apps',
+    //   desc: 'Explore trends in mobile app development that are shaping the future of user experience.',
+    //   date: 'August 10, 2024',
+    //   image: "blogImage2",
+    // },
+    // {
+    //   title: 'Business Automation Trends',
+    //   desc: 'Automation is taking over industries. Learn how to leverage it to grow your business.',
+    //   date: 'July 15, 2024',
+    //   image: "blogImage3",
+    // },
   ]);
 
   return (
@@ -76,10 +78,15 @@ function BlogPage() {
                   <p className='text-[1rem] text-[#E0E0E0] leading-tight'>
                     {blog.desc}
                   </p>
-                  <button className='flex items-center space-x-2 text-[#504CFF] hover:text-[#7A74FF]'>
-                    <span className='text-[1rem]'>Read more</span>
-                    <BsArrowRightCircle size='1.2rem' />
-                  </button>
+                  <a
+                      href={blog.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-[#504CFF] hover:text-[#7A74FF]"
+                    >
+                      <span className="text-[1rem]">Read more</span>
+                      <BsArrowRightCircle size="1.2rem" />
+                    </a>
                 </div>
               </div>
             ))}

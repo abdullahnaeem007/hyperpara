@@ -6,24 +6,24 @@ import proj1 from '../../assets/Homepage/ProjectSection/proj1.png'
 function PortfolioPage() {
     const [projects] = useState([
         { 
-          title: 'MStore', 
-          desc: 'Mangcoding is the biggest company in Indonesia, providing services in Website Development, Shopify, and Wordpress.', 
-          image: proj1 
+          title: 'Resume AI Analysis', 
+          desc: 'A professional, AI-powered resume-building SaaS that delivers keyword-optimized, ATS-friendly CVs tailored for modern tech careers. ', 
+          image: "src/assets/Projects/resume_ai_analysis_proj.png"
         },
         { 
-          title: 'WebCraft', 
-          desc: 'WebCraft specializes in building responsive websites and e-commerce platforms for businesses worldwide.', 
-          image: proj1 
+          title: 'Futura POS', 
+          desc: 'A robust point-of-sale (POS) and inventory management system tailored for businesses to track sales, manage inventory, and streamline payments.', 
+          image: "src/assets/Projects/futura_pos.png"
         },
         { 
-          title: 'AI Tools', 
-          desc: 'We build AI-powered tools that automate processes and enhance business efficiency.', 
-          image: proj1 
+          title: 'Diverge HR', 
+          desc: 'DivergeHR is an AI-driven recruitment platform that automates IT talent acquisition by leveraging NLP and GPT-based intelligence.', 
+          image: "src/assets/Projects/diverge_hr.png"
         },
         { 
-          title: 'AppSuite', 
-          desc: 'AppSuite is a feature-rich mobile and web application designed for modern businesses.', 
-          image: proj1 
+          title: 'Vidit', 
+          desc: 'Vidit is a text-to-video generation tool that transforms Urdu poetry into visually engaging videos, ideal for creating reels and social content.', 
+          image: "src/assets/Projects/vidit.png"
         }
       ]);
 
@@ -36,11 +36,10 @@ function PortfolioPage() {
         />
         <div className='w-full flex flex-col md:px-[5rem] px-[1rem] space-y-[3rem]'>
         <div className='w-full flex flex-col'>
-          <h2 className='w-full text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center md:text-left items-center'>Our Product</h2>
+          <h2 className='w-full text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center md:text-left items-center'>Our Projects</h2>
           <div className='w-full flex flex-col md:flex-row items-center justify-between'>
             <p className='text-[0.8rem] md:text-[0.9rem] md:text-left text-center font-light mt-[1rem] md:mt-0'>
-              help you to build a website company that is modern, user-friendly,<br/> 
-              good CEO, and Clean design
+              Hyperpara helps you build modern, user-friendly websites with clean design, strong SEO, and a seamless user experience tailored for business growth.
             </p>
             <button className='text-[0.8rem] md:text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] py-[0.7rem] md:px-[1.2rem] bg-white text-black rounded-full mt-[1rem] md:mt-0'>
               <span>All Portfolio</span>
