@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 const Navbar = () => {
@@ -8,58 +9,62 @@ const Navbar = () => {
     <nav className="absolute w-full z-[999] bg-transparent">
       <div className="w-full mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          {/* Company Name on Left */}
+          {/* Company Logo on Left */}
           <div className="flex items-center">
-            <h1 className="text-white text-[1rem] font-medium">HyperPara</h1>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/trans-logo.png" 
+                alt="Hyperpara Logo" 
+                className="h-10 wauto object-contain"
+              />
+            </Link>
           </div>
 
           {/* Middle: Navigation Links (for larger screens) */}
           <div className="hidden sm:flex sm:flex-1 items-center justify-center">
             <div className="flex space-x-1">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Home
-              </a>
-              <a
-                href="/services"
+              </Link>
+              <Link
+                to="/services"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Services
-              </a>
-              <a
-                href="/portfolio"
+              </Link>
+              <Link
+                to="/portfolio"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Portfolio
-              </a>
-              <a
-                href="/blog"
+              </Link>
+              <Link
+                to="/blog"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Blogs
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Right End: Get in Touch button (for larger screens) */}
           <div className="hidden sm:flex">
-            <button
-              onClick={() => {
-                window.location.replace('/contact');
-              }}
-              className="text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] py-[0.6rem] bg-transparent border-[#480090] border-[1px] text-white rounded-full"
+            <Link
+              to="/contact"
+              className="text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] py-[0.6rem] bg-transparent border-brand-accent border-[1px] text-white rounded-full hover:bg-brand-accent hover:text-brand-bg transition-colors duration-300"
             >
               <span>Contact Us</span>
-              <BsArrowUpRightCircle size="1rem" />
-            </button>
+              <BsArrowUpRightCircle size="1rem" className="text-brand-accent" />
+            </Link>
           </div>
 
           {/* Mobile Hamburger Menu */}
@@ -93,48 +98,48 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden bg-black`} id="mobile-menu">
+      <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden bg-brand-bg`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Services
-          </a>
-          <a
-            href="/portfolio"
+          </Link>
+          <Link
+            to="/portfolio"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Portfolio
-          </a>
-          <a
-            href="/blog"
+          </Link>
+          <Link
+            to="/blog"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Blogs
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             About
-          </a>
+          </Link>
         </div>
 
         {/* Separate Get in Touch Button in Mobile View */}
         <div className="px-2 pt-4 pb-3">
-          <a
-            href="/contact"
-            className="text-white  hover:text-gray-100 block px-3 py-2 rounded-md text-base font-medium bg-black hover:bg-gray-700  border-white border-[2px]"
+          <Link
+            to="/contact"
+            className="text-white hover:text-gray-100 block px-3 py-2 rounded-md text-base font-medium bg-brand-bg hover:bg-gray-700 border-brand-accent border-[2px] transition-colors duration-300"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

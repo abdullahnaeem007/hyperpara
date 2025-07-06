@@ -14,10 +14,10 @@ import Herosection from './Components/Herosection'
 function App() {
   return (
     <div className='max-w-screen min-h-screen font-Poppins text-white'>
-      <Navbar/>
-      <Herosection/> 
       <BrowserRouter>
         <Fragment>
+          <Navbar/>
+          <Herosection/> 
           <Routes>
             <Route Component={Homepage} path='/'/>
             <Route Component={ServicesPage} path='/services'/>
@@ -26,9 +26,9 @@ function App() {
             <Route Component={BlogPage} path='/blog'/>
             <Route Component={ContactPage} path='/contact'/>
           </Routes>
+          <Footer/>
         </Fragment>
       </BrowserRouter>
-      <Footer/>
     </div>
   )
 }

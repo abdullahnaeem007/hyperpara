@@ -16,16 +16,16 @@ function Herosection() {
       <div className="w-full min-h-screen flex flex-col items-center justify-between py-[2rem]">
         <div className="w-full h-full flex flex-col items-center justify-center space-y-[4vh] md:space-y-[6vh] px-[1rem] md:px-[5rem]">
           <div className="w-full flex items-center justify-center space-x-[0.8rem] md:space-x-[1.1rem]">
-            <button>
+            <button className="hover:text-brand-accent transition-colors duration-300">
               <FaInstagram color="white" size="1rem" className="md:size-[1.1rem]" />
             </button>
-            <button>
+            <button className="hover:text-brand-accent transition-colors duration-300">
               <FaFacebook color="white" size="1rem" className="md:size-[1.1rem]" />
             </button>
-            <button>
+            <button className="hover:text-brand-accent transition-colors duration-300">
               <FaLinkedin color="white" size="1rem" className="md:size-[1.1rem]" />
             </button>
-            <button>
+            <button className="hover:text-brand-accent transition-colors duration-300">
               <FaTwitter color="white" size="1rem" className="md:size-[1.1rem]" />
             </button>
           </div>
@@ -36,7 +36,7 @@ function Herosection() {
             Specializing in crafting AI solutions that drive automation and boost efficiency
             for companies of all sizes
           </p>
-          <button className="text-[0.8rem] md:text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] md:px-[1.2rem] py-[0.6rem] md:py-[0.7rem] bg-white text-black rounded-full">
+          <button className="text-[0.8rem] md:text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1rem] md:px-[1.2rem] py-[0.6rem] md:py-[0.7rem] bg-brand-accent text-brand-bg rounded-full hover:bg-opacity-90 transition-colors duration-300">
             <span>Get started</span>
             <BsArrowUpRightCircle size="1rem" />
           </button>

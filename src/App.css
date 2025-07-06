@@ -1,10 +1,59 @@
+/* Brand Colors */
+:root {
+  --brand-bg: #373643;
+  --brand-text: #ffffff;
+  --brand-accent: #18CB96;
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+/* Custom brand color classes */
+.brand-bg {
+  background-color: var(--brand-bg);
+}
+
+.brand-text {
+  color: var(--brand-text);
+}
+
+.brand-accent {
+  color: var(--brand-accent);
+}
+
+.brand-accent-bg {
+  background-color: var(--brand-accent);
+}
+
+/* Override specific color classes */
+.bg-black {
+  background-color: var(--brand-bg) !important;
+}
+
+.text-white {
+  color: var(--brand-text) !important;
+}
+
+.text-gray-300 {
+  color: var(--brand-text) !important;
+}
+
+.bg-white {
+  background-color: var(--brand-accent) !important;
+}
+
+.text-black {
+  color: var(--brand-bg) !important;
+}
+
 /* Ensure no horizontal scrolling */
 body, html {
-    overflow-x: hidden;
-  }
-  
-  /* General container styling */
-  .max-w-screen {
-    max-width: 100vw;
-  }
-  
+  overflow-x: hidden;
+}
+
+/* General container styling */
+.max-w-screen {
+  max-width: 100vw;
+} 
