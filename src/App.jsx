@@ -13,7 +13,7 @@ import ServiceDetail from './Pages/ServiceDetails/ServiceDetail'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Herosection from './Components/Herosection'
-import SEO from './components/SEO'
+import SEO from './Components/SEO'
 
 // PageHeader component for non-home pages
 const PageHeader = ({ title, description }) => {
