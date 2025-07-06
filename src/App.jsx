@@ -1,6 +1,7 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import Homepage from './Pages/Homepage'
 import ServicesPage from './Pages/ServicesPage/ServicesPage'
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage'
@@ -168,6 +169,11 @@ const AppLayout = () => {
 };
 
 function App() {
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
+  }, []);
+
   return (
     <BrowserRouter>
       <Fragment>

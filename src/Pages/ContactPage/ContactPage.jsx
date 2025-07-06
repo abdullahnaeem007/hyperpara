@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
+import emailjs from '@emailjs/browser';
 import Background_pic from '../../assets/Homepage/SecondSection/Background_pic.png';
 import { Link } from 'react-router-dom';
 
 function ContactPage() {
+    const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         company: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
     const handleChange = (e) => {
         setFormData({
@@ -20,11 +24,36 @@ function ContactPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted:', formData);
-        // You can add email sending logic here or redirect to a thank you page
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        setFormData({ name: '', email: '', company: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // EmailJS configuration
+        const templateParams = {
+            to_email: 'info@hyperpara.co',
+            from_name: formData.name,
+            from_email: formData.email,
+            company: formData.company,
+            message: formData.message,
+            reply_to: formData.email
+        };
+
+        emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+            templateParams,
+            process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+        )
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            setSubmitStatus('success');
+            setFormData({ name: '', email: '', company: '', message: '' });
+            setIsSubmitting(false);
+        })
+        .catch((err) => {
+            console.log('FAILED...', err);
+            setSubmitStatus('error');
+            setIsSubmitting(false);
+        });
     };
 
     const contactInfo = [
@@ -62,7 +91,20 @@ function ContactPage() {
                         </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className='space-y-6'>
+                    {/* Success/Error Messages */}
+                    {submitStatus === 'success' && (
+                        <div className='bg-green-500/20 border border-green-500 text-green-400 px-4 py-3 rounded-lg'>
+                            Thank you for your message! We'll get back to you within 24 hours.
+                        </div>
+                    )}
+                    
+                    {submitStatus === 'error' && (
+                        <div className='bg-red-500/20 border border-red-500 text-red-400 px-4 py-3 rounded-lg'>
+                            Sorry, there was an error sending your message. Please try again or email us directly at info@hyperpara.co
+                        </div>
+                    )}
+
+                    <form ref={form} onSubmit={handleSubmit} className='space-y-6'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                             <div>
                                 <label className='block text-[0.9rem] text-white mb-2'>Name *</label>
@@ -74,6 +116,7 @@ function ContactPage() {
                                     required
                                     className='w-full px-4 py-3 bg-card-bg border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-accent transition-colors duration-300'
                                     placeholder="Your full name"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -86,6 +129,7 @@ function ContactPage() {
                                     required
                                     className='w-full px-4 py-3 bg-card-bg border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-accent transition-colors duration-300'
                                     placeholder="your.email@company.com"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                         </div>
@@ -98,6 +142,7 @@ function ContactPage() {
                                 onChange={handleChange}
                                 className='w-full px-4 py-3 bg-card-bg border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-accent transition-colors duration-300'
                                 placeholder="Your company name"
+                                disabled={isSubmitting}
                             />
                         </div>
                         <div>
@@ -110,14 +155,29 @@ function ContactPage() {
                                 rows="6"
                                 className='w-full px-4 py-3 bg-card-bg border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-brand-accent transition-colors duration-300 resize-none'
                                 placeholder="Tell us about your project, timeline, and goals..."
+                                disabled={isSubmitting}
                             />
                         </div>
                         <button
                             type="submit"
-                            className='flex space-x-[1rem] bg-brand-accent px-[2.2rem] py-[0.8rem] rounded-full text-[1rem] text-brand-bg hover:bg-opacity-90 transition-all duration-300'
+                            disabled={isSubmitting}
+                            className={`flex space-x-[1rem] px-[2.2rem] py-[0.8rem] rounded-full text-[1rem] transition-all duration-300 ${
+                                isSubmitting 
+                                    ? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+                                    : 'bg-brand-accent text-brand-bg hover:bg-opacity-90'
+                            }`}
                         >
-                            <span>Send Message</span>
-                            <BsArrowUpRightCircle size='1rem' />
+                            {isSubmitting ? (
+                                <>
+                                    <span>Sending...</span>
+                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-bg"></div>
+                                </>
+                            ) : (
+                                <>
+                                    <span>Send Message</span>
+                                    <BsArrowUpRightCircle size='1rem' />
+                                </>
+                            )}
                         </button>
                     </form>
                 </div>
