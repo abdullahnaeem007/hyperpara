@@ -1,5 +1,5 @@
-import React from 'react';
-import { BsArrowLeft, BsGithub, BsGlobe } from 'react-icons/bs';
+import React, { useEffect } from 'react';
+import { BsArrowLeft, BsArrowUpRightCircle, BsGithub, BsGlobe } from 'react-icons/bs';
 import { Link, useParams } from 'react-router-dom';
 import { FaReact, FaNodeJs, FaDatabase, FaStripe } from 'react-icons/fa';
 import { SiOpenai, SiRubyonrails, SiSupabase, SiVercel, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
@@ -159,6 +159,10 @@ function ProjectDetail() {
   };
 
   const project = projectsData[projectId];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (

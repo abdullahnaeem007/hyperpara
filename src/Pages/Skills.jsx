@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Background_pic from '../assets/Homepage/SecondSection/Background_pic.png';
 import { CgWebsite } from "react-icons/cg";
 import { RiRobot2Line } from "react-icons/ri";
@@ -18,6 +19,7 @@ import business_skill from '../assets/Homepage/SecondSection/business_skill.png'
 function Skills() {
   const [skills] = useState([
     { 
+      id: 'ai-solutions',
       title: 'AI Solutions', 
       desc: 'We create AI-driven solutions to automate processes and enhance efficiency.', 
       Icon: BsArrowUpRightCircle, 
@@ -26,6 +28,7 @@ function Skills() {
       image: ai_solution_skill 
     },
     { 
+      id: 'web-development',
       title: 'Web Development', 
       desc: 'Skilled in full-stack web development, we bring ideas to life with modern technologies.', 
       Icon: BsArrowUpRightCircle, 
@@ -34,6 +37,7 @@ function Skills() {
       image: web_dev_skill
     },
     { 
+      id: 'chatbot-development',
       title: 'Chatbot Development', 
       desc: 'We design intelligent chatbots to boost engagement and streamline operations.', 
       Icon: BsArrowUpRightCircle, 
@@ -42,6 +46,7 @@ function Skills() {
       image: ai_skill
     },
     { 
+      id: 'app-development',
       title: 'App Development', 
       desc: 'We develop user-centric mobile and web apps with seamless performance.', 
       Icon: BsArrowUpRightCircle, 
@@ -50,6 +55,7 @@ function Skills() {
       image: app_skill
     },
     { 
+      id: 'business-automation',
       title: 'Business Automation', 
       desc: 'We automate business processes to enhance efficiency and reduce costs.', 
       Icon: BsArrowUpRightCircle, 
@@ -58,6 +64,7 @@ function Skills() {
       image: business_skill
     },
     { 
+      id: 'custom-software',
       title: 'Custom Software Development', 
       desc: 'We deliver custom software solutions tailored to your unique needs.', 
       Icon: BsArrowUpRightCircle, 
@@ -127,8 +134,8 @@ function Skills() {
               {skills.slice(rowIndex * 2, rowIndex * 2 + 2).map((skill, index) => {
                 const Icon = skill.Icon;
                 return (
-                  <button 
-                    key={index} 
+                  <div
+                    key={index}
                     className='w-full md:w-[50%] flex flex-col md:flex-row items-center p-[1rem] md:p-[1.5rem] bg-card-bg rounded-lg transition-transform transform hover:scale-105 hover:bg-card-hover'
                   >
                     <div className='w-full md:w-[55%] flex flex-col items-start space-y-[1rem] sm:space-y-[1.5rem] md:space-y-[2rem] pt-[1rem] sm:py-[1rem] md:py-[1.5rem] px-[1rem] sm:px-[1.2rem] md:px-[1.5rem]'>
@@ -137,15 +144,15 @@ function Skills() {
                       </div>
                       <span className='text-[1.2rem] sm:text-[1.4rem] md:text-[1.5rem] font-medium text-white text-start'>{skill.title}</span>
                       <span className='text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] text-[#dad4e4] text-start'>{skill.desc}</span>
-                      <button className='text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] flex items-center space-x-[0.3rem]'>
-                        <text className='underline text-brand-accent'>Start with us</text>
+                      <Link to={`/service/${skill.id}`} className='text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] flex items-center space-x-[0.3rem]'>
+                        <span className='underline text-brand-accent'>Learn more</span>
                         <GoArrowUpRight size='0.8rem' sm:size='0.85rem' md:size='0.9rem' color='#18CB96' />
-                      </button>
+                      </Link>
                     </div>
                     <div className='w-full md:w-[45%] md:h-full h-[15rem] flex flex-col items-end justify-end pt-[1rem] sm:pt-[1.5rem] md:pt-[2rem]'>
                       <img src={skill.image} className='w-fit h-full md:w-fit object-contain' alt={skill.title} />
                     </div>
-                  </button>
+                  </div>
                 );
               })}
             </div>

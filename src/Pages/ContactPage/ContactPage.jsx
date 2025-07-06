@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 import Background_pic from '../../assets/Homepage/SecondSection/Background_pic.png';
+import { Link } from 'react-router-dom';
 
 function ContactPage() {
     const [formData, setFormData] = useState({
@@ -135,7 +136,7 @@ function ContactPage() {
                             <div key={index} className='space-y-2'>
                                 <h4 className='text-[1.1rem] font-semibold text-brand-accent'>{info.title}</h4>
                                 {info.title === 'Email' ? (
-                                    <Link 
+                                    <Link
                                         to={`mailto:${info.value}`}
                                         className='text-[1rem] text-white hover:text-brand-accent transition-colors duration-300'
                                     >

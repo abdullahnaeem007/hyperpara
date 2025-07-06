@@ -8,6 +8,7 @@ import AboutPage from './Pages/AboutPage/AboutPage'
 import BlogPage from './Pages/BlogPage/BlogPage'
 import ContactPage from './Pages/ContactPage/ContactPage'
 import ProjectDetail from './Pages/ProjectDetails/ProjectDetail'
+import ServiceDetail from './Pages/ServiceDetails/ServiceDetail'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Herosection from './Components/Herosection'
@@ -33,14 +34,15 @@ const AppLayout = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isProjectPage = location.pathname.startsWith('/project/');
+  const isServicePage = location.pathname.startsWith('/service/');
 
   return (
     <div className='max-w-screen min-h-screen font-Poppins text-white'>
       <Navbar/>
       {isHomePage ? (
         <Herosection/>
-      ) : isProjectPage ? (
-        // Don't show PageHeader for project detail pages
+      ) : isProjectPage || isServicePage ? (
+        // Don't show PageHeader for project and service detail pages
         null
       ) : (
         <PageHeader 
@@ -68,6 +70,7 @@ const AppLayout = () => {
         <Route Component={BlogPage} path='/blog'/>
         <Route Component={ContactPage} path='/contact'/>
         <Route Component={ProjectDetail} path='/project/:projectId'/>
+        <Route Component={ServiceDetail} path='/service/:serviceId'/>
       </Routes>
       <Footer/>
     </div>
