@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Background_pic from '../assets/Homepage/SecondSection/Background_pic.png';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
-import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,14 +18,19 @@ const Footer = () => {
             <div className='w-full flex flex-col md:flex-row items-center justify-between'>
                 {/* Container for the title and description */}
                 <div className='flex flex-col w-full md:w-3/4 text-left'>
-                <h2 className='text-center md:text-left'>Let's work with us</h2>
+                <h2 className='text-center md:text-left text-green-400'>Let's work with us</h2>
                 <p className='text-[0.8rem] md:text-[0.9rem] font-light mt-[1rem] md:text-left text-center'>
                     Hyperpara is a hybrid software company built for the next generation of digital growth. We deliver lightning-fast software development services, build powerful SaaS products, and create intelligent AI-driven solutions.
                 </p>
                 </div>
 
                 {/* Button on the right side */}
-                <Link to="/about" className='flex w-fit space-x-[0.8rem] md:space-x-[1rem] bg-brand-accent px-[1.5rem] md:px-[2.2rem] py-[0.5rem] md:py-[0.6rem] rounded-full text-[0.9rem] md:text-[1rem] text-brand-bg mt-[1rem] md:mt-0 md:w-auto md:ml-[2rem] hover:bg-opacity-90 transition-colors duration-300'>
+                <Link 
+                  to="https://www.linkedin.com/company/hyperpara" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className='flex w-fit space-x-[0.8rem] md:space-x-[1rem] bg-brand-accent px-[1.5rem] md:px-[2.2rem] py-[0.5rem] md:py-[0.6rem] rounded-full text-[0.9rem] md:text-[1rem] text-brand-bg mt-[1rem] md:mt-0 md:w-auto md:ml-[2rem] hover:bg-opacity-90 transition-colors duration-300'
+                >
                 <span>Know more</span>
                 <BsArrowUpRightCircle size='1rem' />
                 </Link>
@@ -44,7 +49,29 @@ const Footer = () => {
                       alt="Hyperpara Logo" 
                       className="h-10 w-auto object-contain"
                     />
-                    <p className="text-sm text-gray-400">A hybrid software company built for the next generation of digital growth. We deliver lightning-fast software development services, build powerful SaaS products, and create intelligent AI-driven solutions.</p>
+                    <p className="text-sm text-gray-400 mt-4">A hybrid software company built for the next generation of digital growth. We deliver lightning-fast software development services, build powerful SaaS products, and create intelligent AI-driven solutions.</p>
+                    
+                    {/* Contact Information */}
+                    <div className="flex flex-col space-y-2 mt-4 text-sm text-gray-400">
+                      <Link 
+                        to="mailto:info@hyperpara.co"
+                        className="flex items-center space-x-2 hover:text-brand-accent transition-colors duration-300"
+                      >
+                        <FaEnvelope className="text-brand-accent" />
+                        <span>info@hyperpara.co</span>
+                      </Link>
+                      <Link 
+                        to="tel:+33123456789"
+                        className="flex items-center space-x-2 hover:text-brand-accent transition-colors duration-300"
+                      >
+                        <FaPhone className="text-brand-accent" />
+                        <span>+33 1 23 45 67 89</span>
+                      </Link>
+                      <div className="flex items-center space-x-2">
+                        <FaMapMarkerAlt className="text-brand-accent" />
+                        <span>Paris, France</span>
+                      </div>
+                    </div>
                 </div>
                 </div>
 
@@ -73,23 +100,43 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div className="container px-[5rem] mx-auto mt-10 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0  pt-4">
-                <div className="text-gray-400">© 2024 Hyperpara. All rights reserved.</div>
+                <div className="text-gray-400">© 2025 Hyperpara. All rights reserved.</div>
                 <div className="flex space-x-4">
                 <Link to="/about" className="text-gray-400 hover:text-brand-accent transition-colors duration-300">Terms and Policy</Link>
                 </div>
                 <div class='w-fir flex items-center justify-center space-x-[1.1rem]'>
-                    <button className="hover:text-brand-accent transition-colors duration-300">
+                    <Link 
+                      to="https://www.instagram.com/hyperpara" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-accent transition-colors duration-300"
+                    >
                         <FaInstagram color='white' size='1.1rem'/>
-                    </button>
-                    <button className="hover:text-brand-accent transition-colors duration-300">
+                    </Link>
+                    <Link 
+                      to="https://www.facebook.com/hyperpara" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-accent transition-colors duration-300"
+                    >
                         <FaFacebook color='white' size='1.1rem'/>
-                    </button>
-                    <button className="hover:text-brand-accent transition-colors duration-300">
+                    </Link>
+                    <Link 
+                      to="https://www.linkedin.com/company/hyperpara" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-accent transition-colors duration-300"
+                    >
                         <FaLinkedin color='white' size='1.1rem'/>
-                    </button>
-                    <button className="hover:text-brand-accent transition-colors duration-300">
+                    </Link>
+                    <Link 
+                      to="https://twitter.com/hyperpara" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-accent transition-colors duration-300"
+                    >
                         <FaTwitter color='white' size='1.1rem'/>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

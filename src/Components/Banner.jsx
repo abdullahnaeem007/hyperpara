@@ -27,7 +27,7 @@ function Banner() {
         {pic:gemini_banner},
     ])
   return (
-    <div class='w-full relative md:py-[5rem] py-[3rem] flex justify-center items-center bg-black'>
+    <div className='w-full relative md:py-[5rem] py-[3rem] flex justify-center items-center bg-black'>
         <img 
           src={Background_pic} 
           className='w-full h-full object-fit absolute' 
@@ -38,9 +38,9 @@ function Banner() {
             {
                 logos.map((obj,index)=>
                     obj.pic==langchain_banner?
-                    <img src={obj.pic} class='md:w-[10rem] w-[7rem] object-contain'/>
+                    <img src={obj.pic} className='md:w-[10rem] w-[7rem] object-contain' alt="Logo"/>
                     :
-                    <img src={obj.pic} class='md:w-[5rem] w-[3rem] object-contain'/>
+                    <img src={obj.pic} className='md:w-[5rem] w-[3rem] object-contain' alt="Logo"/>
                 )
             }
         </div>

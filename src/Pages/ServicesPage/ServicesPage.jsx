@@ -100,89 +100,74 @@ function ServicesPage() {
     ]);
   
   return (
-    <div className='w-full min-h-screen relative items-center flex flex-col'>
-      <div className='w-full min-h-screen relative flex flex-col space-y-[2rem] md:space-y-[3rem] items-center text-[2rem] md:text-[3.2rem] font-light text-[#dad4e4] leading-tight bg-black'>
-            <img 
-                src={Background_pic} 
-                className='w-full h-full object-cover absolute' 
-                alt="Background" 
-            />  
-            <div className='w-full flex flex-col space-y-[2rem] md:space-y-[3rem] px-[1.5rem] md:px-[5rem] py-[2rem] bg-black'>
-                <div className='w-full flex flex-col items-center md:items-start'>
-                    <h2 className='text-center md:text-left'>Let's work together</h2>
-                    <div className='w-full flex flex-col md:flex-row items-center justify-between'>
-                        <p className='text-[0.8rem] md:text-[0.9rem] font-light mt-[1rem] text-center md:text-left'>
-                          Here are some of the services we offer that can multiply your company's growth 
-                        </p>
-                        <button className='mt-[1rem] md:mt-0 text-[0.8rem] md:text-[0.9rem] w-fit flex space-x-[0.5rem] items-center px-[1.2rem] py-[0.7rem] bg-white text-black rounded-full'>
-                            <span>Get started</span>
-                            <BsArrowUpRightCircle size='1rem'/>
-                        </button>
+    <div className='w-full min-h-screen relative items-center flex flex-col bg-brand-bg'>
+      <img 
+        src={Background_pic} 
+        className='w-full h-full object-cover absolute opacity-20' 
+        alt="Background" 
+      />  
+      <div className='w-full flex flex-col space-y-[2rem] md:space-y-[3rem] px-[1.5rem] md:px-[5rem] py-[4rem] z-10'>
+        <div className='w-full flex flex-col items-center'>
+          <div className='w-full flex flex-col items-center space-y-8 px-[1.5rem] md:px-[3rem] z-10'>
+            {
+              skills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className='w-full flex flex-col md:flex-row items-center p-[1rem] md:p-[1.5rem] bg-card-bg rounded-lg transition-transform transform hover:scale-105 hover:bg-card-hover'
+                >
+                  <div className='flex items-center space-x-4 md:space-x-6'>
+                    <div 
+                      className='flex items-center justify-center rounded-full p-[1rem] md:p-[1.5rem]' 
+                      style={{ backgroundColor: skill.color }}
+                    >
+                      <skill.icon size={30} md:size={40} className="text-white" />
                     </div>
-                </div>
-
-                <div className='w-full flex flex-col items-center'>
-                  <div className='w-full flex flex-col items-center space-y-8 px-[1.5rem] md:px-[3rem] z-10'>
-                      {
-                          skills.map((skill, index) => (
-                              <div 
-                                  key={index} 
-                                  className='w-full flex flex-col md:flex-row items-center p-[1rem] md:p-[1.5rem] bg-[#1c1c1c] rounded-lg transition-transform transform hover:scale-105 hover:bg-[#2a2a2a]'
-                              >
-                                  <div className='flex items-center space-x-4 md:space-x-6'>
-                                      <div 
-                                          className='flex items-center justify-center rounded-full p-[1rem] md:p-[1.5rem]' 
-                                          style={{ backgroundColor: skill.color }}
-                                      >
-                                          <skill.icon size={30} md:size={40} className="text-white" />
-                                      </div>
-                                      <div className='text-left'>
-                                          <h2 className='text-[1.2rem] md:text-[1.5rem] font-semibold text-white'>{skill.title}</h2>
-                                          <p className='text-[0.8rem] md:text-[0.9rem] font-light text-[#dad4e4]'>{skill.desc}</p>
-                                      </div>
-                                  </div>
-                                  <div className='mt-4 md:mt-0 ml-auto'>
-                                      <img src={skill.image} alt={skill.title} className='w-[100px] md:w-[150px] h-auto rounded-lg'/>
-                                  </div>
-                              </div>
-                          ))
-                      }
+                    <div className='text-left'>
+                      <h2 className='text-[1.2rem] md:text-[1.5rem] font-semibold text-white'>{skill.title}</h2>
+                      <p className='text-[0.8rem] md:text-[0.9rem] font-light text-[#dad4e4]'>{skill.desc}</p>
+                    </div>
+                  </div>
+                  <div className='mt-4 md:mt-0 ml-auto'>
+                    <img src={skill.image} alt={skill.title} className='w-[100px] md:w-[150px] h-auto rounded-lg'/>
                   </div>
                 </div>
-
-                {/* Service-Specific Testimonials */}
-                <div className='w-full flex flex-col items-center mt-[4rem] space-y-6'>
-                    <h2 className='text-center text-[1.8rem] md:text-[2.2rem]'>Client Success Stories</h2>
-                    <p className='text-[0.8rem] md:text-[0.9rem] font-light text-center max-w-2xl'>
-                        Real results from startups and enterprises powered by Hyperpara's lightning-fast development
-                    </p>
-                </div>
-
-                <div className='w-full flex flex-wrap justify-center'>
-                    {serviceTestimonials.map((testimonial, index) => (
-                        <div 
-                            key={index} 
-                            className='w-full md:w-[45%] min-h-[12rem] m-[1rem] flex flex-col justify-between space-y-[1rem] md:space-y-[2rem] bg-[#151515] z-10 py-[1rem] pl-[1rem] rounded-xl shadow-sm shadow-white hover:bg-[#1a1a1a] transition-all duration-300'
-                        >
-                            <div className='w-full flex justify-between items-center'>
-                                <div className='w-fit flex items-center space-x-[1rem]'>
-                                    <img src={testimonial.image} className='rounded-xl w-[3rem] md:w-[4rem] object-cover' alt='Client'/>
-                                    <div className='w-fit flex flex-col items-start space-y-[0.5rem]'>
-                                        <span className='text-[0.9rem] font-medium'>{testimonial.name}</span>
-                                        <span className='text-[0.7rem] font-light'>{testimonial.position}</span>
-                                        <span className='text-[0.7rem] font-medium text-[#504CFF]'>{testimonial.service}</span>
-                                    </div>
-                                </div>
-                                <img src={comma} className='w-[2rem] md:w-[2.5rem] object-contain' alt='Comma'/>
-                            </div>
-                            <div className='w-full h-full flex justify-start items-center pr-[1rem]'>
-                                <p className='text-[0.8rem] md:text-[0.9rem] text-[#dad4e4] text-start leading-relaxed'>{testimonial.review}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+              ))
+            }
+          </div>
         </div>
+
+        {/* Service-Specific Testimonials */}
+        <div className='w-full flex flex-col items-center mt-[4rem] space-y-6'>
+          <h2 className='text-center text-[1.8rem] md:text-[2.2rem] text-green-400'>Client Success Stories</h2>
+          <p className='text-[0.8rem] md:text-[0.9rem] font-light text-center max-w-2xl'>
+            Real results from startups and enterprises powered by Hyperpara's lightning-fast development
+          </p>
+        </div>
+
+        <div className='w-full flex flex-wrap justify-center'>
+          {serviceTestimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className='w-full md:w-[45%] min-h-[12rem] m-[1rem] flex flex-col justify-between space-y-[1rem] md:space-y-[2rem] bg-card-bg z-10 py-[1rem] pl-[1rem] rounded-xl shadow-sm shadow-white hover:bg-card-hover transition-all duration-300'
+            >
+              <div className='w-full flex justify-between items-center'>
+                <div className='w-fit flex items-center space-x-[1rem]'>
+                  <img src={testimonial.image} className='rounded-xl w-[3rem] md:w-[4rem] object-cover' alt='Client'/>
+                  <div className='w-fit flex flex-col items-start space-y-[0.5rem]'>
+                    <span className='text-[0.9rem] font-medium'>{testimonial.name}</span>
+                    <span className='text-[0.7rem] font-light'>{testimonial.position}</span>
+                    <span className='text-[0.7rem] font-medium text-brand-accent'>{testimonial.service}</span>
+                  </div>
+                </div>
+                <img src={comma} className='w-[2rem] md:w-[2.5rem] object-contain' alt='Comma'/>
+              </div>
+              <div className='w-full h-full flex justify-start items-center pr-[1rem]'>
+                <p className='text-[0.8rem] md:text-[0.9rem] text-[#dad4e4] text-start leading-relaxed'>{testimonial.review}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

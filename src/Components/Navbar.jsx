@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="absolute w-full z-[999] bg-transparent">
@@ -25,31 +26,51 @@ const Navbar = () => {
             <div className="flex space-x-1">
               <Link
                 to="/"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === '/' 
+                    ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                }`}
               >
                 Home
               </Link>
               <Link
                 to="/services"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === '/services' 
+                    ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                }`}
               >
                 Services
               </Link>
               <Link
                 to="/portfolio"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === '/portfolio' 
+                    ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                }`}
               >
                 Portfolio
               </Link>
               <Link
                 to="/blog"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === '/blog' 
+                    ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                }`}
               >
                 Blogs
               </Link>
               <Link
                 to="/about"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === '/about' 
+                    ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                }`}
               >
                 About
               </Link>
@@ -102,31 +123,51 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             to="/"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+              location.pathname === '/' 
+                ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+            }`}
           >
             Home
           </Link>
           <Link
             to="/services"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+              location.pathname === '/services' 
+                ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+            }`}
           >
             Services
           </Link>
           <Link
             to="/portfolio"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+              location.pathname === '/portfolio' 
+                ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+            }`}
           >
             Portfolio
           </Link>
           <Link
             to="/blog"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+              location.pathname === '/blog' 
+                ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+            }`}
           >
             Blogs
           </Link>
           <Link
             to="/about"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+              location.pathname === '/about' 
+                ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+            }`}
           >
             About
           </Link>
