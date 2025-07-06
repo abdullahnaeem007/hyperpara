@@ -39,10 +39,10 @@ function ContactPage() {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_c4sspv6",
+        "template_8ocnvb8",
         templateParams,
-        "YOUR_PUBLIC_KEY"
+        "jvZ97moL2nqKlihNh"
       )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
