@@ -61,11 +61,11 @@ const Footer = () => {
                         <span>info@hyperpara.co</span>
                       </Link>
                       <Link 
-                        to="tel:+33123456789"
+                        to="tel:+923025414924"
                         className="flex items-center space-x-2 hover:text-brand-accent transition-colors duration-300"
                       >
                         <FaPhone className="text-brand-accent" />
-                        <span>+33 1 23 45 67 89</span>
+                        <span>+92 302 5414924</span>
                       </Link>
                       <div className="flex items-center space-x-2">
                         <FaMapMarkerAlt className="text-brand-accent" />

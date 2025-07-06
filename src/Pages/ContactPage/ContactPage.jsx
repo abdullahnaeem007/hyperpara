@@ -65,7 +65,7 @@ function ContactPage() {
     },
     {
       title: "Phone",
-      value: "+33 1 23 45 67 89",
+      value: "+92 302 5414924",
       description: "Speak directly with our team",
     },
     {
