@@ -10,6 +10,7 @@ import BlogPage from './Pages/BlogPage/BlogPage'
 import ContactPage from './Pages/ContactPage/ContactPage'
 import ProjectDetail from './Pages/ProjectDetails/ProjectDetail'
 import ServiceDetail from './Pages/ServiceDetails/ServiceDetail'
+import NotFound from './Pages/NotFound'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Herosection from './Components/Herosection'
@@ -37,6 +38,12 @@ const AppLayout = () => {
   const isHomePage = location.pathname === '/';
   const isProjectPage = location.pathname.startsWith('/project/');
   const isServicePage = location.pathname.startsWith('/service/');
+  
+  // Check if current path is a defined route
+  const definedRoutes = ['/', '/services', '/products', '/about', '/blog', '/contact'];
+  const isDefinedRoute = definedRoutes.includes(location.pathname) || 
+                        location.pathname.startsWith('/project/') || 
+                        location.pathname.startsWith('/service/');
 
   // SEO data for different pages
   const getSEOData = () => {
@@ -132,6 +139,9 @@ const AppLayout = () => {
       <Navbar/>
       {isHomePage ? (
         <Herosection/>
+      ) : !isDefinedRoute ? (
+        // Don't show PageHeader for 404 page
+        null
       ) : isProjectPage || isServicePage ? (
         // Don't show PageHeader for project and service detail pages
         null
@@ -162,6 +172,7 @@ const AppLayout = () => {
         <Route Component={ContactPage} path='/contact'/>
         <Route Component={ProjectDetail} path='/project/:projectId'/>
         <Route Component={ServiceDetail} path='/service/:serviceId'/>
+        <Route Component={NotFound} path='*'/>
       </Routes>
       <Footer/>
     </div>
