@@ -3,7 +3,6 @@ import { BsArrowUpRightCircle, BsGithub, BsGlobe } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { FaReact, FaNodeJs, FaDatabase, FaStripe } from 'react-icons/fa';
 import { SiOpenai, SiRubyonrails, SiSupabase, SiVercel, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
-import proj1 from '../assets/Homepage/ProjectSection/proj1.png'
 
 function ProjectShowcase() {
 
@@ -13,7 +12,7 @@ function ProjectShowcase() {
       title: 'FUATRA - POS',
       subtitle: 'Inventory & Sales Management Platform',
       description: 'A robust point-of-sale system with M-Pesa integration, real-time inventory tracking, and comprehensive reporting for businesses.',
-      image: proj1,
+      image: '/pos.png',
       demo: 'https://fuatra-fe.vercel.app/',
       github: 'https://github.com/abdullahnaeem007/Fuatra_POS_System',
       category: 'E-commerce & POS',
@@ -29,7 +28,7 @@ function ProjectShowcase() {
       title: 'ResumeAnalysisAI',
       subtitle: 'AI-Powered Resume Builder',
       description: 'Professional resume-building SaaS with AI-generated content, ATS scoring, and keyword optimization for modern careers.',
-      image: proj1,
+      image: '/resume.png',
       demo: 'https://resumeanalysis-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/ResumeAnalysis-frontend',
       category: 'AI & SaaS',
@@ -45,7 +44,7 @@ function ProjectShowcase() {
       title: 'DivergeHR',
       subtitle: 'AI-Powered IT Talent Acquisition',
       description: 'AI-driven recruitment platform with resume parsing, automated interviews, and candidate scoring for tech hiring.',
-      image: proj1,
+      image: '/hr.png',
       demo: 'https://divergehr-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/divergehr-frontend',
       category: 'HR & Recruitment',

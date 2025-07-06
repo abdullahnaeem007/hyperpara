@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { CgWebsite } from "react-icons/cg";
 import { RiRobot2Line } from "react-icons/ri";
 import { GrCloudSoftware } from "react-icons/gr";
@@ -6,6 +7,7 @@ import { MdAppSettingsAlt } from "react-icons/md";
 import { SiMinds } from "react-icons/si";
 import { IoBusinessSharp } from "react-icons/io5";
 import { BsArrowUpRightCircle } from 'react-icons/bs';
+import { GoArrowUpRight } from "react-icons/go";
 import web_dev_skill from '../../assets/Homepage/SecondSection/web_dev_skill.png';
 import ai_skill from '../../assets/Homepage/SecondSection/ai_skill.png';
 import app_skill from '../../assets/Homepage/SecondSection/app_skill.png';
@@ -19,6 +21,7 @@ import comma from '../../assets/Homepage/Testimonial/comma.png';
 function ServicesPage() {
     const [skills] = useState([
         { 
+          id: 'ai-solutions',
           title: 'AI Solutions', 
           desc: 'We create AI-driven solutions to automate processes and enhance efficiency.', 
           icon: SiMinds, 
@@ -27,6 +30,7 @@ function ServicesPage() {
           image: ai_solution_skill 
         },
         { 
+          id: 'web-development',
           title: 'Web Development', 
           desc: 'Skilled in full-stack web development, we bring ideas to life with modern technologies.', 
           icon: CgWebsite, 
@@ -35,6 +39,7 @@ function ServicesPage() {
           image: web_dev_skill
         },
         { 
+          id: 'chatbot-development',
           title: 'Chatbot Development', 
           desc: 'We design intelligent chatbots to boost engagement and streamline operations.', 
           icon: RiRobot2Line, 
@@ -43,6 +48,7 @@ function ServicesPage() {
           image: ai_skill
         },
         { 
+          id: 'app-development',
           title: 'App Development', 
           desc: 'We develop user-centric mobile and web apps with seamless performance.', 
           icon: MdAppSettingsAlt, 
@@ -51,6 +57,7 @@ function ServicesPage() {
           image: app_skill
         },
         { 
+          id: 'business-automation',
           title: 'Business Automation', 
           desc: 'We automate business processes to enhance efficiency and reduce costs.', 
           icon: IoBusinessSharp, 
@@ -59,6 +66,7 @@ function ServicesPage() {
           image: business_skill
         },
         { 
+          id: 'custom-software',
           title: 'Custom Software Development', 
           desc: 'We deliver custom software solutions tailored to your unique needs.', 
           icon: GrCloudSoftware, 
@@ -113,7 +121,7 @@ function ServicesPage() {
               skills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className='w-full flex flex-col md:flex-row items-center p-[1rem] md:p-[1.5rem] bg-card-bg rounded-lg transition-transform transform hover:scale-105 hover:bg-card-hover'
+                  className='w-full flex flex-col md:flex-row items-center justify-between p-[1rem] md:p-[1.5rem] bg-card-bg rounded-lg transition-transform transform hover:scale-105 hover:bg-card-hover'
                 >
                   <div className='flex items-center space-x-4 md:space-x-6'>
                     <div 
@@ -124,10 +132,17 @@ function ServicesPage() {
                     </div>
                     <div className='text-left'>
                       <h2 className='text-[1.2rem] md:text-[1.5rem] font-semibold text-white'>{skill.title}</h2>
-                      <p className='text-[0.8rem] md:text-[0.9rem] font-light text-[#dad4e4]'>{skill.desc}</p>
+                      <p className='text-[0.8rem] md:text-[0.9rem] font-light text-[#dad4e4] mb-[0.5rem]'>{skill.desc}</p>
+                      <Link 
+                        to={`/service/${skill.id}`}
+                        className='flex items-center space-x-[0.3rem] text-[0.8rem] md:text-[0.9rem] text-[#18CB96] hover:text-[#15b085] transition-colors'
+                      >
+                        <span className='underline'>Learn more</span>
+                        <GoArrowUpRight size='0.8rem' md:size='0.9rem' />
+                      </Link>
                     </div>
                   </div>
-                  <div className='mt-4 md:mt-0 ml-auto'>
+                  <div className='mt-4 md:mt-0'>
                     <img src={skill.image} alt={skill.title} className='w-[100px] md:w-[150px] h-auto rounded-lg'/>
                   </div>
                 </div>

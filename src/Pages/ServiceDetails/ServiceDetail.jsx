@@ -397,25 +397,14 @@ function ServiceDetail() {
   return (
     <div className='w-full min-h-screen bg-[#373643] text-white'>
       <div className='w-full flex flex-col md:px-[5rem] px-[1rem] py-[3rem] space-y-[3rem]'>
-        {/* Back Button */}
-        <div className='w-full'>
-          <Link 
-            to="/" 
-            className='inline-flex items-center gap-[0.5rem] text-[#18CB96] hover:text-[#15b085] transition-colors text-[0.9rem]'
-          >
-            <BsArrowLeft size='1rem' />
-            <span>Back to Home</span>
-          </Link>
-        </div>
-
         {/* Service Header */}
-        <div className='w-full flex flex-col lg:flex-row gap-[3rem]'>
+        <div className='w-full flex flex-col lg:flex-row mt-10 gap-[3rem]'>
           {/* Service Image */}
           <div className='lg:w-[40%]'>
             <div className='w-full h-[300px] lg:h-[400px] overflow-hidden rounded-2xl'>
               <img 
                 src={service.image} 
-                className='w-full h-full object-cover'
+                className='w-full h-full object-cover'  
                 alt={service.title}
               />
             </div>

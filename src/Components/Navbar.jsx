@@ -37,7 +37,7 @@ const Navbar = () => {
               <Link
                 to="/services"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === '/services' 
+                  location.pathname === '/services' || location.pathname.startsWith('/service/')
                     ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                 }`}
@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link
                 to="/products"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === '/products' 
+                  location.pathname === '/products' || location.pathname.startsWith('/project/')
                     ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                 }`}
@@ -134,7 +134,7 @@ const Navbar = () => {
           <Link
             to="/services"
             className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-              location.pathname === '/services' 
+              location.pathname === '/services' || location.pathname.startsWith('/service/')
                 ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                 : 'text-gray-300 hover:bg-gray-700 hover:text-white'
             }`}
@@ -144,7 +144,7 @@ const Navbar = () => {
           <Link
             to="/products"
             className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-              location.pathname === '/products' 
+              location.pathname === '/products' || location.pathname.startsWith('/project/')
                 ? 'text-brand-accent bg-brand-accent/10 border border-brand-accent/20' 
                 : 'text-gray-300 hover:bg-gray-700 hover:text-white'
             }`}

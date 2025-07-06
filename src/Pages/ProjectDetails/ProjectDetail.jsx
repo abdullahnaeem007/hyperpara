@@ -3,7 +3,6 @@ import { BsArrowLeft, BsArrowUpRightCircle, BsGithub, BsGlobe } from 'react-icon
 import { Link, useParams } from 'react-router-dom';
 import { FaReact, FaNodeJs, FaDatabase, FaStripe } from 'react-icons/fa';
 import { SiOpenai, SiRubyonrails, SiSupabase, SiVercel, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
-import proj1 from '../../assets/Homepage/ProjectSection/proj1.png';
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -15,7 +14,7 @@ function ProjectDetail() {
       description: 'A robust point-of-sale (POS) and inventory management system tailored for businesses to track sales, manage inventory, and streamline payment processes—especially with M-Pesa integration. Built with a scalable backend, real-time reporting, and a clean, responsive UI to help businesses reduce errors and improve decision-making.',
       role: 'Technical Lead',
       timeline: 'April 2025 - June 2025',
-      image: proj1,
+      image: '/pos.png',
       demo: 'https://fuatra-fe.vercel.app/',
       github: 'https://github.com/abdullahnaeem007/Fuatra_POS_System',
       category: 'E-commerce & POS',
@@ -64,7 +63,7 @@ function ProjectDetail() {
       description: 'A professional, AI-powered resume-building SaaS that delivers keyword-optimized, ATS-friendly CVs tailored for modern tech careers. The platform enhances career success by automating the resume writing process using ChatGPT and modern web technologies.',
       role: 'Full-Stack Developer',
       timeline: 'January 2024 - April 2024',
-      image: proj1,
+      image: '/resume.png',
       demo: 'https://resumeanalysis-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/ResumeAnalysis-frontend',
       category: 'AI & SaaS',
@@ -113,7 +112,7 @@ function ProjectDetail() {
       description: 'DivergeHR is an AI-driven recruitment platform that automates IT talent acquisition by leveraging NLP and GPT-based intelligence. It parses resumes and job descriptions to conduct tailored, AI-powered interviews. The system evaluates candidate suitability and provides automated scoring to assist hiring managers in making faster, data-driven decisions.',
       role: 'Full-Stack Developer',
       timeline: 'June 2023 - August 2023',
-      image: proj1,
+      image: '/hr.png',
       demo: 'https://divergehr-frontend.onrender.com/',
       github: 'https://github.com/abdullahnaeem007/divergehr-frontend',
       category: 'HR & Recruitment',
@@ -184,19 +183,9 @@ function ProjectDetail() {
   return (
     <div className='w-full min-h-screen bg-[#373643] text-white'>
       <div className='w-full flex flex-col md:px-[5rem] px-[1rem] py-[3rem] space-y-[3rem]'>
-        {/* Back Button */}
-        <div className='w-full mt-10'>
-          <Link 
-            to="/products" 
-            className='inline-flex items-center gap-[0.5rem] text-[#18CB96] hover:text-[#15b085] transition-colors text-[0.9rem]'
-          >
-            <BsArrowLeft size='1rem' />
-            <span>Back to Products</span>
-          </Link>
-        </div>
 
         {/* Project Header */}
-        <div className='w-full flex flex-col lg:flex-row gap-[3rem]'>
+        <div className='w-full flex flex-col lg:flex-row mt-10 gap-[3rem]'>
           {/* Project Image */}
           <div className='lg:w-[40%]'>
             <div className='w-full h-[300px] lg:h-[400px] overflow-hidden rounded-2xl'>
